@@ -4,58 +4,128 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-commerc project</title>
-    <link rel="stylesheet" href="main.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
     
-    <!-- Header -->
-    <header>
-        <div class="nav container">
-            <a href="" class="logo">Ecommerc</a>
-            <!-- Cart icon -->
-            <i class='bx bx-shopping-bag' id="cart-icon"></i>
-        </div>
-    </header>
-    <!-- Shop -->
-    <section class="shop container">
-        <h2 class="section-title">Shop products</h2>
-        <!-- Content -->
-        <div class="shop-content">
-            <!-- Box 1 -->
-            <div class="product-box">
-                <img src="img/product1.jpg" alt="product" class="product-img">
-                <h2 class="product-title">T-shirt</h2>
-                <span class="price">$25</span>
-                <i class="bx bx-shopping-bag add-cart"></i>
+    <!-- Header  -->
+        <header>
+            <!-- Nav -->
+            <div class="nav container">
+                <a href="" class="logo">Online web shop</a>
+                <!-- Cart icon -->
+                <i class='bx bx-shopping-bag' id="cart-icon"></i>
+                <!-- End of Cart icon -->
+                <!-- Cart -->
+                <div class="cart">
+                    <h2 class="cart-title">Tvoja korpa</h2>
+                    <!-- Content -->
+                    <div class="cart-content">
+                        <div class="cart-box">
+                            <img src="img/adidas.jpg" alt="" class="cart-img">
+                            <div class="detail-box">
+                                <div class="cart-product-title">
+                                    <div class="cart-price">2999 rsd</div>
+                                    <input type="number" value="1" class="cart-quantity">
+                                </div>
+                            </div>
+                            <!-- Remove cart -->
+                            <i class='bx bx-trash cart-remove'></i>
+                            <!-- End of Remove cart -->
+                        </div>
+                    </div>
+                    <!-- End of Content -->
+
+                    <!-- Total -->
+                        <div class="total">
+                            <div class="total-title">Ukupno</div>
+                            <div class="total-price">0 rsd</div>
+                        </div>
+                    <!-- End of Total -->
+                    <!-- Buy Button -->
+                    <button type="button" class="btn-buy">Do sada</button>
+                    <!-- End of Buy Button -->
+                    <!-- Cart Close -->
+                    <i class='bx bx-x' id="close-cart"></i>
+                    <!-- End of Cart Close -->
+                </div>
+                <!-- End of Cart -->
             </div>
-            <!-- End of Box 1 -->
-            <!-- Box 2 -->
-            <div class="product-box">
-                <img src="img/product1.jpg" alt="product" class="product-img">
-                <h2 class="product-title">T-shirt</h2>
-                <span class="price">$25</span>
-                <i class="bx bx-shopping-bag add-cart"></i>
+            <!--End of Nav -->
+        </header>
+    <!-- End of Header  -->
+    <!-- Web shop -->
+        <section class="shop container">
+            <h2 class="section-title">Svi proizvodi</h2>
+            <!-- Content -->
+            <div class="shop-content">
+                <!-- Products -->
+                <div class="product-box">
+                    <img src="img/nike1.jpg" alt="" class="product-img">
+                    <h2 class="product-title">Nike muska majica</h2>
+                    <div class="span price">2999 rsd</div>
+                    <i class='bx bx-shopping-bag add-cart'></i>
+                </div>
+
+                <div class="product-box">
+                    <img src="img/xwave.jpg" alt="" class="product-img">
+                    <h2 class="product-title">Xwave slusalice</h2>
+                    <div class="span price">4999 rsd</div>
+                    <i class='bx bx-shopping-bag add-cart'></i>
+                </div>
+
+                <div class="product-box">
+                    <img src="img/adidas.jpg" alt="" class="product-img">
+                    <h2 class="product-title">Muska jakna adidas</h2>
+                    <div class="span price">6900 rsd</div>
+                    <i class='bx bx-shopping-bag add-cart'></i>
+                </div>
+
+                <div class="product-box">
+                    <img src="img/flasica.jpg" alt="" class="product-img">
+                    <h2 class="product-title">Adidas flasica za vodu</h2>
+                    <div class="span price">1200 rsd</div>
+                    <i class='bx bx-shopping-bag add-cart'></i>
+                </div>
+
+                <div class="product-box">
+                    <img src="img/rayban.jpg" alt="" class="product-img">
+                    <h2 class="product-title">Muske naocare Rayban</h2>
+                    <div class="span price">7900 rsd</div>
+                    <i class='bx bx-shopping-bag add-cart'></i>
+                </div>
+
+                <div class="product-box">
+                    <img src="img/puma.jpg" alt="" class="product-img">
+                    <h2 class="product-title">Puma kacket</h2>
+                    <div class="span price">2400 rsd</div>
+                    <i class='bx bx-shopping-bag add-cart'></i>
+                </div>
+
+                <div class="product-box">
+                    <img src="img/reebok.jpg" alt="" class="product-img">
+                    <h2 class="product-title">Rebook ranac</h2>
+                    <div class="span price">3499 rsd</div>
+                    <i class='bx bx-shopping-bag add-cart'></i>
+                </div>
+
+                <div class="product-box">
+                    <img src="img/ck.jpg" alt="" class="product-img">
+                    <h2 class="product-title">Kelvin Clein muske patike</h2>
+                    <div class="span price">14999 rsd</div>
+                    <i class='bx bx-shopping-bag add-cart'></i>
+                </div>
+                <!-- End of Products -->
             </div>
-            <!-- End of Box 2 -->
-            <!-- Box 3 -->
-            <div class="product-box">
-                <img src="img/product1.jpg" alt="product" class="product-img">
-                <h2 class="product-title">T-shirt</h2>
-                <span class="price">$25</span>
-                <i class="bx bx-shopping-bag add-cart"></i>
-            </div>
-            <!-- End of Box 3 -->
-            <!-- Box 4 -->
-            <div class="product-box">
-                <img src="img/product1.jpg" alt="product" class="product-img">
-                <h2 class="product-title">T-shirt</h2>
-                <span class="price">$25</span>
-                <i class="bx bx-shopping-bag add-cart"></i>
-            </div>
-            <!-- End of Box 4 -->
-        </div>
-    </section>
+            <!-- End of Content -->
+        </section>
+    <!-- End of Web shop -->
+
+
+        
+
+
 <script src="main.js"></script>
 </body>
 </html>
