@@ -28,7 +28,6 @@ if(document.readyState == 'loading') {
 function ready() {
     // Remove Items from Cart
     const removeCartButtons = document.querySelectorAll(".cart-remove");
-    console.log(removeCartButtons);
     for(let i = 0; i < removeCartButtons.length; i++) {
         let button = removeCartButtons[i];
         button.addEventListener("click", removeCartItem);
@@ -46,6 +45,18 @@ function ready() {
         let button = addCart[i];
         button.addEventListener("click", addCartClicked);
     }
+    // Buy button work
+    document.getElementsByClassName('btn-buy')[0].addEventListener('click', buyButtonClicked);
+}
+
+// Buy button
+function buyButtonClicked() {
+    alert('Vaša porudžbina je postavljena!');
+    let cartContent = document.getElementsByClassName('cart-content')[0];
+    while(cartContent.hasChildNodes()) {
+        cartContent.removeChild(cartContent.firstChild);
+    }
+    updateTotal();
 }
 
 // Add to Cart 
@@ -72,10 +83,11 @@ function addProductToCart(title, price, productImg) {
         return;
       }
     }
-    let cartBoxContent = `<img src="img/adidas.jpg" alt="" class="cart-img">
+    let cartBoxContent = `<img src="${productImg}" alt="" class="cart-img">
 <div class="detail-box">
     <div class="cart-product-title">
-        <div class="cart-price">49.52rsd</div>
+        <p class="title">${title}</p>
+        <div class="cart-price">${price}rsd</div>
         <input type="number" value="1" class="cart-quantity">
     </div>
 </div>
@@ -122,12 +134,11 @@ function updateTotal() {
         let price = parseFloat(priceElement.innerText.replace("rsd", ""));
         let quantity = quantityElement.value;
         total = total + price * quantity;
-
+    }
         // If price Contain some Cents value
         total = Math.round(total * 100) / 100;
 
         document.getElementsByClassName('total-price')[0].innerText = total + ' rsd';
-    }
 }
 
 
