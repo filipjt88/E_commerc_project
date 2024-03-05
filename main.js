@@ -31,7 +31,7 @@ function ready() {
     console.log(removeCartButtons);
     for(let i = 0; i < removeCartButtons.length; i++) {
         let button = removeCartButtons[i];
-        button.addEventListener("click", removeCarItem);
+        button.addEventListener("click", removeCartItem);
     }
     // Quantity Changes
     let quantityInputs = document.getElementsByClassName('cart-quantity');
@@ -62,19 +62,17 @@ function addCartClicked(e) {
 
 
 function addProductToCart(title, price, productImg) {
-    let cartShop = document.createElement('div');
-    cartShop.classList.add('cart-box');
+    let cartShopBox = document.createElement('div');
+    cartShopBox.classList.add('cart-box');
     let cartItems = document.getElementsByClassName('cart-content')[0];
     let cartItemsNames = cartItems.getElementsByClassName('cart-product-title');
     for(let i = 0; i < cartItemsNames.length; i++) {
-        if(cartItemsNames[i].innerText == title) 
-        alert('You have already add this item to cart');
+      if(cartItemsNames[i].innerText == title) {
+        alert('Već ste dodali ovaj artikal u svoju korpu');
         return;
+      }
     }
-}
-
-
-let cartBoxContent = `<img src="img/adidas.jpg" alt="" class="cart-img">
+    let cartBoxContent = `<img src="img/adidas.jpg" alt="" class="cart-img">
 <div class="detail-box">
     <div class="cart-product-title">
         <div class="cart-price">49.52rsd</div>
@@ -83,16 +81,19 @@ let cartBoxContent = `<img src="img/adidas.jpg" alt="" class="cart-img">
 </div>
 <i class='bx bx-trash cart-remove'></i>`;
 
-cartBox.innerHTML = cartBoxContent;
-cartItems.append(cartShop);
-cartBox.getElementsByClassName('cart-remove')[0].addEventListener("click", removeCarItem);
-cartBox.getElementsByClassName('cart-quantity')[0].addEventListener("change", quantityChanged);
+cartShopBox.innerHTML = cartBoxContent;
+cartItems.append(cartShopBox);
+cartShopBox.getElementsByClassName('cart-remove')[0].addEventListener('click', removeCartItem);
+cartShopBox.getElementsByClassName('cart-quantity')[0].addEventListener('change', quantityChanged);
+}
+
+
 
 
 
 // Remove Items from Cart
 
-function removeCarItem(e) {
+function removeCartItem(e) {
     let buttonClicked = e.target;
     buttonClicked.parentElement.remove();
     updateTotal();
